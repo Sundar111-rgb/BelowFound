@@ -8,9 +8,6 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
@@ -18,17 +15,14 @@ import {
 } from 'react-native';
 
 import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+  Colors
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './src/Home';
 import { NavigationContainer } from '@react-navigation/native';
-import Delivery from './src/Delivery';
-import Dining from './src/Dining';
-
+import { createStackNavigator } from '@react-navigation/stack';
+import FlatlistScroll from './src/FlatlistScroll';
+import Details from './src/Details';
+const Stack = createStackNavigator();
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -59,20 +53,23 @@ function Section({children, title}: SectionProps): React.JSX.Element {
   );
 }
 
+
+
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === 'light';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <NavigationContainer>
-         <Delivery />
-      </NavigationContainer>
-    </SafeAreaView>
-  );
+    <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Details" component={Details} />
+       </Stack.Navigator>
+    </NavigationContainer>
+   );
 }
 
 const styles = StyleSheet.create({
