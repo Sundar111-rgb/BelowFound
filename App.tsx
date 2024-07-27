@@ -20,7 +20,6 @@ import {
 import Home from './src/Home';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import FlatlistScroll from './src/FlatlistScroll';
 import Details from './src/Details';
 const Stack = createStackNavigator();
 type SectionProps = PropsWithChildren<{
