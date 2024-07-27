@@ -35,13 +35,13 @@ function NowPlaying(props) {
                 />
               </View>
               <View style={{marginTop: 10}}>
-                <Text style={{color: '#000', fontSize: 13, fontWeight: '500'}}>
+                <Text style={{color: '#000', fontSize: 13, fontWeight: '500', fontFamily:'Times New Roman'}}>
                   {item.title.substring(0, 22)}
                 </Text>
-                <Text style={{color: '#000', fontSize: 11}}>
+                <Text style={{color: '#000', fontSize: 11, fontFamily:'Times New Roman'}}>
                   Release date :{item.release_date}
                 </Text>
-                <Text style={{color: '#000', fontSize: 11}}>
+                <Text style={{color: '#000', fontSize: 11, fontFamily:'Times New Roman'}}>
                   Rating :{item.vote_average}
                 </Text>
               </View>
