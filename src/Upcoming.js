@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {list,  upcoming} from './assets/list';
+import {imagepath, list,  upcoming} from './assets/list';
 import {FlatList, View, Text, Image, ImageBackground, StyleSheet} from 'react-native';
 
 function Upcoming(props) {
@@ -28,7 +28,7 @@ function Upcoming(props) {
         renderItem={({item}) => {
           return (
             <ImageBackground
-              source={require('./assets/film.jpg')}
+              source={{ uri:imagepath+item.poster_path}}
               style={styles.imagebak}>
               <View
                 style={[styles.content]}>
@@ -47,6 +47,8 @@ function Upcoming(props) {
     </View>
   );
 }
+
+
 
 export default Upcoming;
 

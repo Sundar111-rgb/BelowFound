@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 
-import {list, popular, toprated} from './assets/list';
+import {imagecontain, imagedes, imagepath, list, popular, toprated} from './assets/list';
 import {FlatList, View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
@@ -79,10 +79,9 @@ function TopRated(props) {
              
             }}
               style={styles.flatView}>
-              <View>
-                <Image
-                  source={require('./assets/film.jpg')}
-                  style={{width: 175, height: 75, borderRadius: 10}}
+             <View style={imagecontain}>
+                <Image source={{ uri:imagepath + item.poster_path}}
+                  style={imagedes}
                 />
               </View>
               <View style={{marginTop: 10}}>

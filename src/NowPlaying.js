@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-import {list, nowplaying} from './assets/list';
+import { imagepath, list, nowplaying, imagedes, imagecontain } from './assets/list';
 import { FlatList, View, Text, Image, StyleSheet } from 'react-native';
 
 function NowPlaying(props) {
@@ -28,10 +28,9 @@ function NowPlaying(props) {
           return (
             <View
               style={styles.flatview}>
-              <View>
-                <Image
-                  source={require('./assets/film.jpg')}
-                  style={{width: 175, height: 75, borderRadius: 10}}
+              <View style={imagecontain}>
+                <Image source={{ uri:imagepath + item.poster_path}}
+                  style={imagedes}
                 />
               </View>
               <View style={{marginTop: 10}}>
