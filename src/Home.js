@@ -13,10 +13,10 @@ const Tab = createBottomTabNavigator();
 
 function Home() {
 
-  const animateW = useSharedValue(-3);
-  const animateX = useSharedValue(10);
-  const animateY = useSharedValue(10);
-  const animateZ = useSharedValue(10);
+  const animateW = useSharedValue(-1);
+  const animateX = useSharedValue(12);
+  const animateY = useSharedValue(12);
+  const animateZ = useSharedValue(12);
 
 
  const animatedStyleW = useAnimatedStyle(() => {
@@ -48,21 +48,23 @@ function Home() {
         initialRouteName="Now Playing"
         screenOptions={{
           tabBarActiveTintColor: '#e91e63',
+          tabBarInactiveTintColor: '#5F6360'
         }}
         >
         <Tab.Screen
           name="Now Playing"
           component={NowPlaying}
           listeners={{ tabPress :e => {
-             animateW.value = withTiming(-3, { duration:300})
-             animateX.value = withTiming(10,{ duration:300})
-             animateY.value = withTiming(10,{ duration:300})
-             animateZ.value = withTiming(10,{ duration:300})
+             animateW.value = withTiming(-1,{ duration:300})
+             animateX.value = withTiming(12,{ duration:300})
+             animateY.value = withTiming(12,{ duration:300})
+             animateZ.value = withTiming(12,{ duration:300})
            }}
            }
           options={{
-            tabBarLabel: 'Now Playing',
+            tabBarLabel: '',
             tabBarIcon: ({color, size}) => (
+              <View>
               <Animated.View  style={[styles.bottomView,animatedStyleW]}>
                 <Image
                   style={[styles.bottomImage]}
@@ -70,6 +72,8 @@ function Home() {
                   source={require('./assets/video.png')}
                 />
               </Animated.View>
+              <Text style={[styles.bottom,{color:color}]}>Now Playing</Text>
+              </View>
             ),
           }}
         />
@@ -77,15 +81,16 @@ function Home() {
           name="Popular"
           component={Popular}
          listeners={{ tabPress :e => {
-             animateW.value = withTiming(10,{ duration:300})
-             animateX.value = withTiming(-3, { duration:300})
-             animateY.value = withTiming(10,{ duration:300})
-             animateZ.value = withTiming(10,{ duration:300})
+             animateW.value = withTiming(12,{ duration:300})
+             animateX.value = withTiming(-1, { duration:300})
+             animateY.value = withTiming(12,{ duration:300})
+             animateZ.value = withTiming(12,{ duration:300})
         }}
         }
           options={{
-            tabBarLabel: 'Popular',
+            tabBarLabel: '',
             tabBarIcon: ({color, size}) => (
+              <View>
               <Animated.View  style={[styles.bottomView,animatedStyleX]}>
                 <Image
                   style={styles.bottomImage}
@@ -93,6 +98,8 @@ function Home() {
                   source={require('./assets/popularity.png')}
                 />
               </Animated.View>
+              <Text style={[styles.bottom,{color:color}]}>Popular</Text>
+              </View>
             ),
           }}
         />
@@ -100,15 +107,16 @@ function Home() {
           name="Top Rated"
           component={TopRated}
           listeners={{ tabPress :e => {
-            animateW.value = withTiming(10,{ duration:300})
-            animateX.value = withTiming(10,{ duration:300})
-            animateY.value = withTiming(-3, { duration:300})
-            animateZ.value = withTiming(10,{ duration:300})
+            animateW.value = withTiming(12,{ duration:300})
+            animateX.value = withTiming(12,{ duration:300})
+            animateY.value = withTiming(-1, { duration:300})
+            animateZ.value = withTiming(12,{ duration:300})
            }}
            }
           options={{
-            tabBarLabel: 'Top Rated',
+            tabBarLabel: '',
             tabBarIcon: ({color, size}) => (
+              <View>
               <Animated.View  style={[styles.bottomView,animatedStyleY]}>
                 <Image
                   style={styles.bottomImage}
@@ -116,6 +124,8 @@ function Home() {
                   source={require('./assets/badge.png')}
                 />
               </Animated.View>
+              <Text style={[styles.bottom,{color:color}]}>Top Rated</Text>
+              </View>
             ),
           }}
         />
@@ -123,15 +133,16 @@ function Home() {
           name="Upcoming"
           component={Upcoming}
           listeners={{ tabPress :e => {
-            animateW.value = withTiming(10,{ duration:300})
-            animateX.value = withTiming(10,{ duration:300})
-            animateY.value = withTiming(10,{ duration:300})
-            animateZ.value = withTiming(-3, { duration:300})
+            animateW.value = withTiming(12,{ duration:300})
+            animateX.value = withTiming(12,{ duration:300})
+            animateY.value = withTiming(12,{ duration:300})
+            animateZ.value = withTiming(-1, { duration:300})
            }}
            }
           options={{
-            tabBarLabel: 'Upcoming',
+           tabBarLabel: '',
             tabBarIcon: ({color, size}) => (
+              <View>
               <Animated.View  style={[styles.bottomView,animatedStyleZ]}>
                 <Image
                   style={styles.bottomImage}
@@ -139,6 +150,8 @@ function Home() {
                   source={require('./assets/upcoming.png')}
                 />
               </Animated.View>
+               <Text style={[styles.bottom,{color:color}]}>Upcoming</Text>
+               </View>
             ),
           }}
         />
@@ -149,7 +162,7 @@ function Home() {
 export default Home;
 
 const styles = StyleSheet.create({
-  bottom: {fontSize: 13, fontWeight: 'bold', fontFamily:'Times New Roman'},
+  bottom: {fontSize: 13, fontWeight: '200', fontFamily:'Times New Roman'},
   bottomView: {
     padding: 12,
     justifyContent: 'center',
