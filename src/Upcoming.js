@@ -32,11 +32,11 @@ function Upcoming(props) {
               style={styles.imagebak}>
               <View
                 style={[styles.content]}>
-                <Text style={{color: '#000', fontSize: 16, fontWeight:'600', flexWrap:'wrap',fontFamily:'Times New Roman'}}>{item.title}</Text>
-                <Text style={{color: '#000', fontSize:12,fontFamily:'Times New Roman'}}>
+                <Text style={{color: '#000', fontSize: 22, fontWeight:'600', flexWrap:'wrap',fontFamily:'Times New Roman'}}>{item.title}</Text>
+                <Text style={{color: '#000', fontSize:16,fontFamily:'Times New Roman'}}>
                   Release date : {item.release_date}
                 </Text>
-                <Text style={{color: '#000', fontSize:12,fontFamily:'Times New Roman'}}>
+                <Text style={{color: '#000', fontSize:16,fontFamily:'Times New Roman'}}>
                   Rating : {item.vote_average}
                 </Text>
               </View>
@@ -61,12 +61,12 @@ const styles = StyleSheet.create({
   },
   imagebak : {
     width: 410,
-    height: 355,
+    height: '100%',
     shadowOffset: {
       width: 0,
       height: 5,
     },
-    resizeMode:'contain',
+    resizeMode:'cover',
     shadowOpacity: 0.5,
     shadowRadius: 2,
     shadowColor: '#000',
