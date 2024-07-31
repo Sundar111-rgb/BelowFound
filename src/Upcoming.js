@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowColor: '#000',
    margin: 10,
-    alignSelf:'center',justifyContent:'center',
-    borderWidth:0, borderRadius:10
+    alignSelf:'center',justifyContent:'center'
+    
   },
   content:{ position: 'absolute',
   bottom: 0,

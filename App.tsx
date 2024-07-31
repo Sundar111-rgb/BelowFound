@@ -21,6 +21,10 @@ import Home from './src/Home';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Details from './src/Details';
+import Homes from './src/Homes';
+import First from './src/First';
+import Second from './src/Second';
+import Third from './src/Third';
 const Stack = createStackNavigator();
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -64,7 +68,7 @@ function App(): React.JSX.Element {
   return (
     <NavigationContainer>
         <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Home" component={Homes} />
           <Stack.Screen name="Details" component={Details} />
        </Stack.Navigator>
     </NavigationContainer>
