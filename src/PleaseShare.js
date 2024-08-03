@@ -6,7 +6,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-function DotShare(props) {
+export default(props) => {
   const [open, setOpen] = useState(true);
   const animateW = useSharedValue(0);
   const animateX = useSharedValue(0);
@@ -43,7 +43,7 @@ function DotShare(props) {
   });
 
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems:'center', backgroundColor:'#ccc'}}>
+    <View style={{flex: 1, justifyContent: 'center', alignItems:'center', backgroundColor:'##9247de'}}>
       <Animated.View style={[styles.bottomView, animatedStyleW]}>
         <Image
           style={[styles.bottomImage]}
@@ -80,7 +80,7 @@ function DotShare(props) {
             ? withTiming(-70, {duration: 300})
             : withTiming(0, {duration: 300});
           animateWW.value = open
-            ? withTiming(-70, {duration: 300})
+            ? withTiming(-80, {duration: 300})
             : withTiming(0, {duration: 300});
 
           animateX.value = open
@@ -91,10 +91,10 @@ function DotShare(props) {
             : withTiming(0, {duration: 700});
 
           animateY.value = open
-            ? withTiming(70, {duration: 1200})
+            ? withTiming(80, {duration: 1200})
             : withTiming(0, {duration: 1200});
           animateYY.value = open
-            ? withTiming(-70, {duration: 1200})
+            ? withTiming(-80, {duration: 1200})
             : withTiming(0, {duration: 1200});
 
           animateZ.value = open
@@ -113,29 +113,29 @@ function DotShare(props) {
   );
 }
 
-export default DotShare;
 
 const styles = StyleSheet.create({
   bottomView: {
-    height: 50,
-    width: 50,
-    // backgroundColor: 'red',
-    // borderRadius: 20,
+    height: 60,
+    width: 60,
+     backgroundColor: '#2495d1',
+     borderRadius: 50,
     position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth:2
   },
 
   bottomVieww: {
     height: 50,
     width: 50,
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     borderRadius: 30,
     position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
   },
 
-  bottomImage: {height: 30, width: 30, position: 'absolute'},
+  bottomImage: {height: 50, width: 50, position: 'absolute'},
   bottomImagee: {height: 30, width: 30, position: 'absolute'},
 });
